@@ -9,5 +9,5 @@ void command_mute(char * command);
 int next_ip(unsigned char ip[4], unsigned char end_ip[4]);
 int compare_ip(char ip1[4], char ip2[4]);
 void copy_ip(char target[4], char origin[4]);
-int ping_next_IPV4(char ip_start[4], char end_ip[4] );
+int ping_next_IPV4(char ip_start[4], char end_ip[4], int * ping_code );
 #endif

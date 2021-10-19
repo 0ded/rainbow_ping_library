@@ -4,15 +4,12 @@
 #include <string.h>
 
 
-int ping_next_IPV4(char ip_start[4], char end_ip[4])
+int ping_next_IPV4(char ip_start[4], char end_ip[4], int * ping_code)
 {
-	int code = ping_IPV4(ip_start, 1, 1);
 
-	if(!next_ip(ip_start, end_ip))
-	{
-		return -1;
-	}
-	return code;
+	int code = ping_IPV4(ip_start, 1, 1);
+	result[0] = code;
+	return next_ip(ip_start, end_ip);
 }
 
 //mute not 0 to mute
