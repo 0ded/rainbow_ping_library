@@ -12,6 +12,7 @@ int ping_next_IPV4(char ip_start[4], char end_ip[4], int * ping_code)
 	return next_ip(ip_start, end_ip);
 }
 
+
 //mute not 0 to mute
 int ping_IPV4(char * ipv4, int ping_amount, char mute)
 {
@@ -120,3 +121,4 @@ int compare_ip(char ip1[4], char ip2[4])
 	}
 	return 0;
 }
+
