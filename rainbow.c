@@ -6,10 +6,11 @@
 
 int ping_next_IPV4(char ip_start[4], char end_ip[4], int * ping_code)
 {
-
-	int code = ping_IPV4(ip_start, 1, 1);
-	result[0] = code;
+	int code = ping_IPV4(ip_start, 2, 1);
+	ping_code[0] = code;
+	
 	return next_ip(ip_start, end_ip);
+
 }
 
 
@@ -28,7 +29,9 @@ int ping_IPV4(char * ipv4, int ping_amount, char mute)
 	{
 		printf("%s\r\n", command);
 	}
+	
 	int code = system(command);
+	
 	return code;
 }
 
@@ -94,7 +97,7 @@ void command_add_amount(char * command, int amount)
 	#ifdef __linux__
 	strcat(command, "-c 1 -t ");
 	#elif __WIN32
-	strcat(command, "-t ");
+	strcat(command, "-n ");
 	#endif
 	char str_amount[14];
 	sprintf(str_amount, "%d ", amount);
